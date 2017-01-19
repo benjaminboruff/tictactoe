@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardTitle, CardText, CardActions , Grid, Cell } from 'react-mdl';
 import './Board.css';
-import Player from './Player';
+// import Player from './Player';
+import PlaceHolder from './PlaceHolder';
 
 function Board(props) {
   return (
@@ -12,19 +13,19 @@ function Board(props) {
         </CardTitle>
         <CardText>
           <Grid className="rows" shadow={3}>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
-            <Cell className="cell" col={4} component={Player}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
+            <Cell col={4} component={PlaceHolder} handleClick={props.handleClick}></Cell>
           </Grid>
         </CardText>
         <CardActions>Placeholder</CardActions>
