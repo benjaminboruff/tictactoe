@@ -10,15 +10,15 @@ function Board(props) {
   let row2 = [6,7,8];
 
   let row0Components = row0.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn} positions={props.positions} col={4} component={Move} handleClick={props.handleClick}></Cell>;
+    return <Cell key={location} value={location} turn={props.turn} col={4} component={Move} handleClick={props.handleClick}></Cell>;
   });
 
   let row1Components = row1.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn} positions={props.positions} col={4} component={Move} handleClick={props.handleClick}></Cell>;
+    return <Cell key={location} value={location} turn={props.turn}  col={4} component={Move} handleClick={props.handleClick}></Cell>;
   });
 
   let row2Components = row2.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn} positions={props.positions} col={4} component={Move} handleClick={props.handleClick}></Cell>;
+    return <Cell key={location} value={location} turn={props.turn} col={4} component={Move} handleClick={props.handleClick}></Cell>;
   });
 
   return (
