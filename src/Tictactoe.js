@@ -6,7 +6,7 @@ class Tictactoe extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      turn: ' ',
+      turn: 'start',
       loc0: '0',
       loc1: '1',
       loc2: '2',
@@ -17,6 +17,8 @@ class Tictactoe extends Component {
       loc7: '7',
       loc8: '8'
     };
+
+    this.win = false;
 
     this.handleClick0 = this.handleClick0.bind(this);
     this.handleClick1 = this.handleClick1.bind(this);
@@ -30,76 +32,94 @@ class Tictactoe extends Component {
   }
 
   handleClick0(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc0: 'X'});
-    } else {
-      this.setState({turn: 'O', loc0: 'O'});
+    if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc0: 'X'});
+      } else {
+        this.setState({turn: 'O', loc0: 'O'});
+      }
     }
     e.preventDefault();
 }
 
   handleClick1(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc1: 'X'});
-    } else {
-      this.setState({turn: 'O', loc1: 'O'});
+    if(this.state.loc1 !== 'X' && this.state.loc1 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc1: 'X'});
+      } else {
+        this.setState({turn: 'O', loc1: 'O'});
+      }
     }
     e.preventDefault();
   }
 
   handleClick2(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc2: 'X'});
-    } else {
-      this.setState({turn: 'O', loc2: 'O'});
+    if(this.state.loc2 !== 'X' && this.state.loc2 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc2: 'X'});
+      } else {
+        this.setState({turn: 'O', loc2: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick3(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc3: 'X'});
-    } else {
-      this.setState({turn: 'O', loc3: 'O'});
+    if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc3: 'X'});
+      } else {
+        this.setState({turn: 'O', loc3: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick4(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc4: 'X'});
-    } else {
-      this.setState({turn: 'O', loc4: 'O'});
+    if(this.state.loc4 !== 'X' && this.state.loc4 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc4: 'X'});
+      } else {
+        this.setState({turn: 'O', loc4: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick5(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc5: 'X'});
-    } else {
-      this.setState({turn: 'O', loc5: 'O'});
+    if(this.state.loc5 !== 'X' && this.state.loc5 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc5: 'X'});
+      } else {
+        this.setState({turn: 'O', loc5: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick6(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc6: 'X'});
-    } else {
-      this.setState({turn: 'O', loc6: 'O'});
+    if(this.state.loc6 !== 'X' && this.state.loc6 !== 'O' && this.win === false) {
+      if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc6: 'X'});
+      } else {
+        this.setState({turn: 'O', loc6: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick7(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc7: 'X'});
-    } else {
-      this.setState({turn: 'O', loc7: 'O'});
+    if(this.state.loc7 !== 'X' && this.state.loc7 !== 'O' && this.win === false) {
+      if(this.state.turn === ' ' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc7: 'X'});
+      } else {
+        this.setState({turn: 'O', loc7: 'O'});
+      }
     }
     e.preventDefault();
   }
   handleClick8(e) {
-    if(this.state.turn === ' ' || this.state.turn === 'O') {
-      this.setState({turn: 'X', loc8: 'X'});
-    } else {
-      this.setState({turn: 'O', loc8: 'O'});
+    if(this.state.loc8 !== 'X' && this.state.loc8 !== 'O' && this.win === false) {
+      if(this.state.turn === ' ' || this.state.turn === 'O') {
+        this.setState({turn: 'X', loc8: 'X'});
+      } else {
+        this.setState({turn: 'O', loc8: 'O'});
+      }
     }
     e.preventDefault();
   }

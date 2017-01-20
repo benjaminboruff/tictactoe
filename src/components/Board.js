@@ -18,14 +18,14 @@ function Board(props) {
             <Cell value={props.loc2} turn={props.turn} col={4} component={Move} handleClick={props.handleClick2}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-          <Cell value={props.loc3} turn={props.turn} col={4} component={Move} handleClick={props.handleClick3}></Cell>
-          <Cell value={props.loc4} turn={props.turn} col={4} component={Move} handleClick={props.handleClick4}></Cell>
-          <Cell value={props.loc5} turn={props.turn} col={4} component={Move} handleClick={props.handleClick5}></Cell>
+            <Cell value={props.loc3} turn={props.turn} col={4} component={Move} handleClick={props.handleClick3}></Cell>
+            <Cell value={props.loc4} turn={props.turn} col={4} component={Move} handleClick={props.handleClick4}></Cell>
+            <Cell value={props.loc5} turn={props.turn} col={4} component={Move} handleClick={props.handleClick5}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-          <Cell value={props.loc6} turn={props.turn} col={4} component={Move} handleClick={props.handleClick6}></Cell>
-          <Cell value={props.loc7} turn={props.turn} col={4} component={Move} handleClick={props.handleClick7}></Cell>
-          <Cell value={props.loc8} turn={props.turn} col={4} component={Move} handleClick={props.handleClick8}></Cell>
+            <Cell value={props.loc6} turn={props.turn} col={4} component={Move} handleClick={props.handleClick6}></Cell>
+            <Cell value={props.loc7} turn={props.turn} col={4} component={Move} handleClick={props.handleClick7}></Cell>
+            <Cell value={props.loc8} turn={props.turn} col={4} component={Move} handleClick={props.handleClick8}></Cell>
           </Grid>
         </CardText>
         <CardActions>Placeholder</CardActions>
