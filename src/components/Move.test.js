@@ -1,8 +1,8 @@
 import React from 'react';
-import Player from './Player';
+import Move from './Move';
 import { shallow } from 'enzyme';
 
 // smoke
 it('it should render without error',() => {
-  expect(shallow(<Player />));
+  expect(shallow(<Move />));
 });

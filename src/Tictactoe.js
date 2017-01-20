@@ -5,7 +5,20 @@ import Board from './components/Board';
 class Tictactoe extends Component {
   constructor(props) {
     super(props);
-    this.state = {turn: ' '}
+    this.state = {
+      turn: ' ',
+      positions: {
+        loc0: ' ',
+        loc2: ' ',
+        loc3: ' ',
+        loc4: ' ',
+        loc5: ' ',
+        loc6: ' ',
+        loc7: ' ',
+        loc8: ' ',
+        loc9: ' '
+      }
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
@@ -22,7 +35,7 @@ class Tictactoe extends Component {
   render() {
     return (
       <div className="App">
-        <Board turn={this.state.turn} handleClick={this.handleClick} />
+        <Board turn={this.state.turn} positions={this.state.posiitons} handleClick={this.handleClick} />
       </div>
     );
   }
