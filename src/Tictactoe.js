@@ -31,6 +31,11 @@ class Tictactoe extends Component {
     this.handleClick8 = this.handleClick8.bind(this);
   }
 
+  checkForWin() {
+    let winX = 'XXX';
+    let winO = 'OOO';
+  }
+
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
