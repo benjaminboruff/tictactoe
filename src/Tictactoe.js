@@ -18,85 +18,106 @@ class Tictactoe extends Component {
       loc8: '8'
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick0 = this.handleClick0.bind(this);
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+    this.handleClick3 = this.handleClick3.bind(this);
+    this.handleClick4 = this.handleClick4.bind(this);
+    this.handleClick5 = this.handleClick5.bind(this);
+    this.handleClick6 = this.handleClick6.bind(this);
+    this.handleClick7 = this.handleClick7.bind(this);
+    this.handleClick8 = this.handleClick8.bind(this);
   }
 
-  handleClick(e) {
-    this.setState({turn: 'X', loc1: e.target.value});
-    //   if(this.state.turn === ' ' || this.state.turn === 'O') {
-    //     switch (e.target.value) {
-    //       case 0:
-    //         this.setState({loc0: 'X'});
-    //         break;
-    //       case 1:
-    //         this.setState({turn: 'X', loc1: 'X'});
-    //         break;
-    //       case 2:
-    //         this.setState({turn: 'X', loc2: 'X'});
-    //         break;
-    //       case 3:
-    //         this.setState({turn: 'X', loc3: 'X'});
-    //         break;
-    //       case 4:
-    //         this.setState({turn: 'X', loc4: 'X'});
-    //         break;
-    //       case 5:
-    //         this.setState({turn: 'X', loc5: 'X'});
-    //         break;
-    //       case 6:
-    //         this.setState({turn: 'X', loc6: 'X'});
-    //         break;
-    //       case 7:
-    //         this.setState({turn: 'X', loc7: 'X'});
-    //         break;
-    //       case 8:
-    //         this.setState({turn: 'X', loc8: 'X'});
-    //         break;
-    //       default:
-    //         console.log(e.target.value);
-    //     }
-    //   } else {
-    //     switch (e.target.value) {
-    //       case 0:
-    //         this.setState({turn: 'O', loc0: 'O'});
-    //         break;
-    //       case 1:
-    //         this.setState({turn: 'O', loc1: 'O'});
-    //         break;
-    //       case 2:
-    //         this.setState({turn: 'O', loc2: 'O'});
-    //         break;
-    //       case 3:
-    //         this.setState({turn: 'O', loc3: 'O'});
-    //         break;
-    //       case 4:
-    //         this.setState({turn: 'O', loc4: 'O'});
-    //         break;
-    //       case 5:
-    //         this.setState({turn: 'O', loc5: 'O'});
-    //         break;
-    //       case 6:
-    //         this.setState({turn: 'O', loc6: 'O'});
-    //         break;
-    //       case 7:
-    //         this.setState({turn: 'O', loc7: 'O'});
-    //         break;
-    //       case 8:
-    //         this.setState({turn: 'O', loc8: 'O'});
-    //         break;
-    //       default:
-    //         console.log(e.target.value);
-    //   }
-    // }
+  handleClick0(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc0: 'X'});
+    } else {
+      this.setState({turn: 'O', loc0: 'O'});
+    }
     e.preventDefault();
 }
+
+  handleClick1(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc1: 'X'});
+    } else {
+      this.setState({turn: 'O', loc1: 'O'});
+    }
+    e.preventDefault();
+  }
+
+  handleClick2(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc2: 'X'});
+    } else {
+      this.setState({turn: 'O', loc2: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick3(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc3: 'X'});
+    } else {
+      this.setState({turn: 'O', loc3: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick4(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc4: 'X'});
+    } else {
+      this.setState({turn: 'O', loc4: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick5(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc5: 'X'});
+    } else {
+      this.setState({turn: 'O', loc5: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick6(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc6: 'X'});
+    } else {
+      this.setState({turn: 'O', loc6: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick7(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc7: 'X'});
+    } else {
+      this.setState({turn: 'O', loc7: 'O'});
+    }
+    e.preventDefault();
+  }
+  handleClick8(e) {
+    if(this.state.turn === ' ' || this.state.turn === 'O') {
+      this.setState({turn: 'X', loc8: 'X'});
+    } else {
+      this.setState({turn: 'O', loc8: 'O'});
+    }
+    e.preventDefault();
+  }
 
   render() {
     return (
       <div className="App">
         <Board
           turn={this.state.turn}
-          handleClick={this.handleClick}
+          handleClick0={this.handleClick0}
+          handleClick1={this.handleClick1}
+          handleClick2={this.handleClick2}
+          handleClick3={this.handleClick3}
+          handleClick4={this.handleClick4}
+          handleClick5={this.handleClick5}
+          handleClick6={this.handleClick6}
+          handleClick7={this.handleClick7}
+          handleClick8={this.handleClick8}
           loc0={this.state.loc0}
           loc1={this.state.loc1}
           loc2={this.state.loc2}

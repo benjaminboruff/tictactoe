@@ -5,22 +5,6 @@ import './Board.css';
 //import PlaceHolder from './PlaceHolder';
 
 function Board(props) {
-  let row0 = [0,1,2];
-  let row1 = [3,4,5];
-  let row2 = [6,7,8];
-
-  let row0Components = row0.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn} col={4} component={Move} handleClick={props.handleClick}></Cell>;
-  });
-
-  let row1Components = row1.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn}  col={4} component={Move} handleClick={props.handleClick}></Cell>;
-  });
-
-  let row2Components = row2.map((location) => {
-    return <Cell key={location} value={location} turn={props.turn} col={4} component={Move} handleClick={props.handleClick}></Cell>;
-  });
-
   return (
     <div>
       <Card id="board" shadow={3}>
@@ -29,13 +13,19 @@ function Board(props) {
         </CardTitle>
         <CardText>
           <Grid className="rows" shadow={3}>
-            {row0Components}
+            <Cell value={props.loc0} turn={props.turn} col={4} component={Move} handleClick={props.handleClick0}></Cell>
+            <Cell value={props.loc1} turn={props.turn} col={4} component={Move} handleClick={props.handleClick1}></Cell>
+            <Cell value={props.loc2} turn={props.turn} col={4} component={Move} handleClick={props.handleClick2}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-            {row1Components}
+          <Cell value={props.loc3} turn={props.turn} col={4} component={Move} handleClick={props.handleClick3}></Cell>
+          <Cell value={props.loc4} turn={props.turn} col={4} component={Move} handleClick={props.handleClick4}></Cell>
+          <Cell value={props.loc5} turn={props.turn} col={4} component={Move} handleClick={props.handleClick5}></Cell>
           </Grid>
           <Grid className="rows" shadow={3}>
-            {row2Components}
+          <Cell value={props.loc6} turn={props.turn} col={4} component={Move} handleClick={props.handleClick6}></Cell>
+          <Cell value={props.loc7} turn={props.turn} col={4} component={Move} handleClick={props.handleClick7}></Cell>
+          <Cell value={props.loc8} turn={props.turn} col={4} component={Move} handleClick={props.handleClick8}></Cell>
           </Grid>
         </CardText>
         <CardActions>Placeholder</CardActions>
