@@ -34,6 +34,43 @@ class Tictactoe extends Component {
   checkForWin() {
     let winX = 'XXX';
     let winO = 'OOO';
+    let row0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let row1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let row2 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let col0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let col1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let col2 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let diag0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let diag1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+
+    switch('XXX') {
+      case row0:
+        console.log("X wins");
+        break;
+      case row1:
+        console.log("X wins");
+        break;
+      case row2:
+        console.log("X wins");
+        break;
+      case col0:
+        console.log("X wins");
+        break;
+      case col1:
+        console.log("X wins");
+        break;
+      case col2:
+        console.log("X wins");
+        break;
+      case diag0:
+        console.log("X wins");
+        break;
+      case diag1:
+        console.log("X wins");
+        break;
+      default:
+        console.log("No Winner yet");
+    }
   }
 
   handleClick0(e) {
