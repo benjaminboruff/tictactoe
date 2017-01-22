@@ -31,7 +31,7 @@ class Tictactoe extends Component {
     this.handleClick8 = this.handleClick8.bind(this);
   }
 
-  checkForWin() {
+  checkForWin(move) {
     let row0 = this.state.loc0 + this.state.loc1 + this.state.loc2;
     let row1 = this.state.loc3 + this.state.loc4 + this.state.loc5;
     let row2 = this.state.loc6 + this.state.loc7 + this.state.loc8;
@@ -40,187 +40,162 @@ class Tictactoe extends Component {
     let col2 = this.state.loc2 + this.state.loc5 + this.state.loc8;
     let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
     let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
+    let triple = move.repeat(3);
 
-    switch('XXX') {
+    switch(triple) {
       case row0:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case row1:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case row2:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case col0:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case col1:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case col2:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case diag0:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       case diag1:
-        console.log("X wins");
+        console.log(`${move} wins`);
         this.win = true;
         return true;
       default:
-        console.log("No X Winner yet");
-        //return false;
+        console.log(`No ${move} Winner yet`);
     }
-
-    switch('OOO') {
-      case row0:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case row1:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case row2:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case col0:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case col1:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case col2:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case diag0:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      case diag1:
-        console.log("O wins");
-        this.win = true;
-        return true;
-      default:
-        console.log("No O Winner yet");
-        //return false;
-    }
-
     return false;
-
   }
 
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc0: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc0: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
 }
 
   handleClick1(e) {
     if(this.state.loc1 !== 'X' && this.state.loc1 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc1: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc1: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
 
   handleClick2(e) {
     if(this.state.loc2 !== 'X' && this.state.loc2 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc2: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc2: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick3(e) {
     if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc3: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc3: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick4(e) {
     if(this.state.loc4 !== 'X' && this.state.loc4 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc4: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc4: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick5(e) {
     if(this.state.loc5 !== 'X' && this.state.loc5 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc5: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc5: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick6(e) {
     if(this.state.loc6 !== 'X' && this.state.loc6 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc6: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc6: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick7(e) {
     if(this.state.loc7 !== 'X' && this.state.loc7 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc7: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc7: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
+
   handleClick8(e) {
     if(this.state.loc8 !== 'X' && this.state.loc8 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
         this.setState({turn: 'X', loc8: 'X'});
+        setTimeout(() => {this.checkForWin('X')},0);
       } else {
         this.setState({turn: 'O', loc8: 'O'});
+        setTimeout(() => {this.checkForWin('O')},0);
       }
     }
     e.preventDefault();
-    setTimeout(() => {this.checkForWin()},0);
   }
 
   render() {
