@@ -44,27 +44,35 @@ class Tictactoe extends Component {
     switch('XXX') {
       case row0:
         console.log("X wins");
+        this.win = true;
         return true;
       case row1:
         console.log("X wins");
+        this.win = true;
         return true;
       case row2:
         console.log("X wins");
+        this.win = true;
         return true;
       case col0:
         console.log("X wins");
+        this.win = true;
         return true;
       case col1:
         console.log("X wins");
+        this.win = true;
         return true;
       case col2:
         console.log("X wins");
+        this.win = true;
         return true;
       case diag0:
         console.log("X wins");
+        this.win = true;
         return true;
       case diag1:
         console.log("X wins");
+        this.win = true;
         return true;
       default:
         console.log("No X Winner yet");
@@ -74,27 +82,35 @@ class Tictactoe extends Component {
     switch('OOO') {
       case row0:
         console.log("O wins");
+        this.win = true;
         return true;
       case row1:
         console.log("O wins");
+        this.win = true;
         return true;
       case row2:
         console.log("O wins");
+        this.win = true;
         return true;
       case col0:
         console.log("O wins");
+        this.win = true;
         return true;
       case col1:
         console.log("O wins");
+        this.win = true;
         return true;
       case col2:
         console.log("O wins");
+        this.win = true;
         return true;
       case diag0:
         console.log("O wins");
+        this.win = true;
         return true;
       case diag1:
         console.log("O wins");
+        this.win = true;
         return true;
       default:
         console.log("No O Winner yet");
