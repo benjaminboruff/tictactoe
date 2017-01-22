@@ -32,45 +32,77 @@ class Tictactoe extends Component {
   }
 
   checkForWin() {
-    let winX = 'XXX';
-    let winO = 'OOO';
-    let row0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let row1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let row2 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let col0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let col1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let col2 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let diag0 = this.state.loc0 + this.state.loc1 + this.state.loc3;
-    let diag1 = this.state.loc0 + this.state.loc1 + this.state.loc3;
+    let row0 = this.state.loc0 + this.state.loc1 + this.state.loc2;
+    let row1 = this.state.loc3 + this.state.loc4 + this.state.loc5;
+    let row2 = this.state.loc6 + this.state.loc7 + this.state.loc8;
+    let col0 = this.state.loc0 + this.state.loc3 + this.state.loc6;
+    let col1 = this.state.loc1 + this.state.loc4 + this.state.loc7;
+    let col2 = this.state.loc2 + this.state.loc5 + this.state.loc8;
+    let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
+    let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
 
     switch('XXX') {
       case row0:
         console.log("X wins");
-        break;
+        return true;
       case row1:
         console.log("X wins");
-        break;
+        return true;
       case row2:
         console.log("X wins");
-        break;
+        return true;
       case col0:
         console.log("X wins");
-        break;
+        return true;
       case col1:
         console.log("X wins");
-        break;
+        return true;
       case col2:
         console.log("X wins");
-        break;
+        return true;
       case diag0:
         console.log("X wins");
-        break;
+        return true;
       case diag1:
         console.log("X wins");
-        break;
+        return true;
       default:
-        console.log("No Winner yet");
+        console.log("No X Winner yet");
+        //return false;
     }
+
+    switch('OOO') {
+      case row0:
+        console.log("O wins");
+        return true;
+      case row1:
+        console.log("O wins");
+        return true;
+      case row2:
+        console.log("O wins");
+        return true;
+      case col0:
+        console.log("O wins");
+        return true;
+      case col1:
+        console.log("O wins");
+        return true;
+      case col2:
+        console.log("O wins");
+        return true;
+      case diag0:
+        console.log("O wins");
+        return true;
+      case diag1:
+        console.log("O wins");
+        return true;
+      default:
+        console.log("No O Winner yet");
+        //return false;
+    }
+
+    return false;
+
   }
 
   handleClick0(e) {
@@ -82,6 +114,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
 }
 
   handleClick1(e) {
@@ -93,6 +126,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
 
   handleClick2(e) {
@@ -104,6 +138,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick3(e) {
     if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
@@ -114,6 +149,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick4(e) {
     if(this.state.loc4 !== 'X' && this.state.loc4 !== 'O' && this.win === false) {
@@ -124,6 +160,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick5(e) {
     if(this.state.loc5 !== 'X' && this.state.loc5 !== 'O' && this.win === false) {
@@ -134,6 +171,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick6(e) {
     if(this.state.loc6 !== 'X' && this.state.loc6 !== 'O' && this.win === false) {
@@ -144,6 +182,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick7(e) {
     if(this.state.loc7 !== 'X' && this.state.loc7 !== 'O' && this.win === false) {
@@ -154,6 +193,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
   handleClick8(e) {
     if(this.state.loc8 !== 'X' && this.state.loc8 !== 'O' && this.win === false) {
@@ -164,6 +204,7 @@ class Tictactoe extends Component {
       }
     }
     e.preventDefault();
+    setTimeout(() => {this.checkForWin()},0);
   }
 
   render() {
