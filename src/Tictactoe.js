@@ -81,6 +81,21 @@ class Tictactoe extends Component {
     return false;
   }
 
+  willWin(move, location) {
+    let row0 = this.state.loc0 + this.state.loc1 + this.state.loc2;
+    let row1 = this.state.loc3 + this.state.loc4 + this.state.loc5;
+    let row2 = this.state.loc6 + this.state.loc7 + this.state.loc8;
+    let col0 = this.state.loc0 + this.state.loc3 + this.state.loc6;
+    let col1 = this.state.loc1 + this.state.loc4 + this.state.loc7;
+    let col2 = this.state.loc2 + this.state.loc5 + this.state.loc8;
+    let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
+    let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
+    let front = " " + move.repeat(2);
+    let end = move.repeat(2) + " ";
+    let middle = move + " " + move;
+    
+  }
+
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
