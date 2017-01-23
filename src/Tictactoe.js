@@ -91,8 +91,8 @@ class Tictactoe extends Component {
     let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
     let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
     let front = " " + move.repeat(2);
-    let end = move.repeat(2) + " ";
     let middle = move + " " + move;
+    let end = move.repeat(2) + " ";
     // use regexp loc* then \d then loc*
   }
 
