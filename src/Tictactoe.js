@@ -93,7 +93,7 @@ class Tictactoe extends Component {
     let front = " " + move.repeat(2);
     let end = move.repeat(2) + " ";
     let middle = move + " " + move;
-    
+    // use regexp loc* then \d then loc*
   }
 
   handleClick0(e) {
