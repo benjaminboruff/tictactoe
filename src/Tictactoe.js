@@ -6,6 +6,7 @@ class Tictactoe extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      computer: 'X',
       turn: 'start',
       loc0: '0',
       loc1: '1',
@@ -29,6 +30,26 @@ class Tictactoe extends Component {
     this.handleClick6 = this.handleClick6.bind(this);
     this.handleClick7 = this.handleClick7.bind(this);
     this.handleClick8 = this.handleClick8.bind(this);
+  }
+
+  ai() {
+    let move = this.willWin();
+    if(move) {
+      let location = 'loc' + move;
+      this.setState({turn: this.state.computer, [location]: this.state.computer});
+      setTimeout(() => {this.checkForWin(this.state.computer)},move);
+    } else {
+      let available = false;
+      while(!available){
+        let randomMoveLocation = Math.floor(Math.random() * 9);
+        let randomMove = 'loc' + randomMoveLocation.toString();
+        if(this.state[randomMove].match(/\d/)) {
+          available = true;
+          this.setState({turn: this.state.computer, [randomMove]: this.state.computer});
+          setTimeout(() => {this.checkForWin(this.state.computer)},move);
+        }
+      }
+    }
   }
 
   checkForWin(move) {
@@ -104,7 +125,7 @@ class Tictactoe extends Component {
     });
     let winningLocation = winner !== undefined ? winner.match(/\d/)[0] : null;
     console.log(winningLocation);
-    return winningLocation !== null ? true : false;
+    return winningLocation !== null ? winningLocation : false;
   }
 
   handleClick0(e) {
