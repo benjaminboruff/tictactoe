@@ -90,15 +90,23 @@ class Tictactoe extends Component {
     let col2 = this.state.loc2 + this.state.loc5 + this.state.loc8;
     let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
     let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
-    let front = " " + move.repeat(2);
-    let middle = move + " " + move;
-    let end = move.repeat(2) + " ";
+    let board = [row0,row1,row2,col0,col1,col2,diag0,diag1];
+    // let front = " " + move.repeat(2);
+    // let middle = move + " " + move;
+    // let end = move.repeat(2) + " ";
     // use regexp loc* then \d then loc*
+    if(move === 'X') {
+      let possibleWins = board.map((rowStr) => {
+        return rowStr.match(/(X\dX)|(XX\d)|(\dXX)/);
+      });
+      console.log(possibleWins);
+    }
   }
 
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc0: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -112,6 +120,7 @@ class Tictactoe extends Component {
   handleClick1(e) {
     if(this.state.loc1 !== 'X' && this.state.loc1 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc1: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -125,6 +134,7 @@ class Tictactoe extends Component {
   handleClick2(e) {
     if(this.state.loc2 !== 'X' && this.state.loc2 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc2: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -138,6 +148,7 @@ class Tictactoe extends Component {
   handleClick3(e) {
     if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc3: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -151,6 +162,7 @@ class Tictactoe extends Component {
   handleClick4(e) {
     if(this.state.loc4 !== 'X' && this.state.loc4 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc4: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -164,6 +176,7 @@ class Tictactoe extends Component {
   handleClick5(e) {
     if(this.state.loc5 !== 'X' && this.state.loc5 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc5: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -177,6 +190,7 @@ class Tictactoe extends Component {
   handleClick6(e) {
     if(this.state.loc6 !== 'X' && this.state.loc6 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc6: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -190,6 +204,7 @@ class Tictactoe extends Component {
   handleClick7(e) {
     if(this.state.loc7 !== 'X' && this.state.loc7 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc7: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
@@ -203,6 +218,7 @@ class Tictactoe extends Component {
   handleClick8(e) {
     if(this.state.loc8 !== 'X' && this.state.loc8 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
+        this.willWin('X', null);
         this.setState({turn: 'X', loc8: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
