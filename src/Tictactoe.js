@@ -81,7 +81,7 @@ class Tictactoe extends Component {
     return false;
   }
 
-  willWin(move, location) {
+  willWin() {
     let row0 = this.state.loc0 + this.state.loc1 + this.state.loc2;
     let row1 = this.state.loc3 + this.state.loc4 + this.state.loc5;
     let row2 = this.state.loc6 + this.state.loc7 + this.state.loc8;
@@ -91,25 +91,30 @@ class Tictactoe extends Component {
     let diag0 = this.state.loc0 + this.state.loc4 + this.state.loc8;
     let diag1 = this.state.loc2 + this.state.loc4 + this.state.loc6;
     let board = [row0,row1,row2,col0,col1,col2,diag0,diag1];
-    // let front = " " + move.repeat(2);
-    // let middle = move + " " + move;
-    // let end = move.repeat(2) + " ";
-    // use regexp loc* then \d then loc*
-    if(move === 'X') {
-      let possibleWins = board.map((rowStr) => {
-        return rowStr.match(/(X\dX)|(XX\d)|(\dXX)/);
-      });
-      console.log(possibleWins);
-    }
+    let xTest = /(X\dX)|(XX\d)|(\dXX)/;
+    let oTest = /(O\dO)|(OO\d)|(\dOO)/;
+
+    let possibleWin = board.map((rowStr) => {
+      let positionX = rowStr.match(xTest);
+      let positionO = rowStr.match(oTest);
+      return positionX !== null ? positionX[0] : positionO !== null ? positionO[0] : null;
+    });
+    let winner = possibleWin.find((rowStr) => {
+      return rowStr !== null;
+    });
+    let winningLocation = winner !== undefined ? winner.match(/\d/)[0] : null;
+    console.log(winningLocation);
+    return winningLocation !== null ? true : false;
   }
 
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
+        this.willWin();
         this.setState({turn: 'X', loc0: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin();
         this.setState({turn: 'O', loc0: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -120,10 +125,11 @@ class Tictactoe extends Component {
   handleClick1(e) {
     if(this.state.loc1 !== 'X' && this.state.loc1 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
+        this.willWin();
         this.setState({turn: 'X', loc1: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin();
         this.setState({turn: 'O', loc1: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -134,10 +140,11 @@ class Tictactoe extends Component {
   handleClick2(e) {
     if(this.state.loc2 !== 'X' && this.state.loc2 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
+        this.willWin();
         this.setState({turn: 'X', loc2: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin();
         this.setState({turn: 'O', loc2: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -148,10 +155,11 @@ class Tictactoe extends Component {
   handleClick3(e) {
     if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
+        this.willWin();
         this.setState({turn: 'X', loc3: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin();
         this.setState({turn: 'O', loc3: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -166,6 +174,7 @@ class Tictactoe extends Component {
         this.setState({turn: 'X', loc4: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin('X', null);
         this.setState({turn: 'O', loc4: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -180,6 +189,7 @@ class Tictactoe extends Component {
         this.setState({turn: 'X', loc5: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin('X', null);
         this.setState({turn: 'O', loc5: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -194,6 +204,7 @@ class Tictactoe extends Component {
         this.setState({turn: 'X', loc6: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin('X', null);
         this.setState({turn: 'O', loc6: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -208,6 +219,7 @@ class Tictactoe extends Component {
         this.setState({turn: 'X', loc7: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin('X', null);
         this.setState({turn: 'O', loc7: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
@@ -222,6 +234,7 @@ class Tictactoe extends Component {
         this.setState({turn: 'X', loc8: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
+        this.willWin('X', null);
         this.setState({turn: 'O', loc8: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
