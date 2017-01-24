@@ -8,6 +8,7 @@ class Tictactoe extends Component {
     this.state = {
       computer: 'X',
       turn: 'start',
+      gameOver: false,
       loc0: '0',
       loc1: '1',
       loc2: '2',
@@ -34,22 +35,38 @@ class Tictactoe extends Component {
 
   ai() {
     let move = this.willWin();
+    // if there is a "winning" move, take it.
+    // if the winning move is the computers, the computer wins (human error);
+    // otherwise the "win" was the human's, and thus block it.
     if(move) {
       let location = 'loc' + move;
       this.setState({turn: this.state.computer, [location]: this.state.computer});
-      setTimeout(() => {this.checkForWin(this.state.computer)},move);
+      setTimeout(() => {this.checkForWin(this.state.computer)},0);
     } else {
-      let available = false;
-      while(!available){
+      // if there is no winning move, then pick a random, unoccupied
+      // location and move there.
+      let foundOne = false;
+      console.log("Win state: " + this.win);
+      while(this.available() && !foundOne && !this.win){
         let randomMoveLocation = Math.floor(Math.random() * 9);
         let randomMove = 'loc' + randomMoveLocation.toString();
         if(this.state[randomMove].match(/\d/)) {
-          available = true;
+          foundOne = true;
           this.setState({turn: this.state.computer, [randomMove]: this.state.computer});
-          setTimeout(() => {this.checkForWin(this.state.computer)},move);
+          setTimeout(() => {this.checkForWin(this.state.computer)},0);
         }
       }
     }
+  }
+
+  available() {
+    for(let i = 0; i < 9; i++) {
+      let location = 'loc' + i.toString();
+      if(this.state[location].match(/\d/) !== null) {
+        return true;
+      }
+    }
+    return false;
   }
 
   checkForWin(move) {
@@ -99,6 +116,7 @@ class Tictactoe extends Component {
       default:
         console.log(`No ${move} Winner yet`);
     }
+
     return false;
   }
 
@@ -131,14 +149,15 @@ class Tictactoe extends Component {
   handleClick0(e) {
     if(this.state.loc0 !== 'X' && this.state.loc0 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin();
         this.setState({turn: 'X', loc0: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin();
         this.setState({turn: 'O', loc0: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    } else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
 }
@@ -146,14 +165,15 @@ class Tictactoe extends Component {
   handleClick1(e) {
     if(this.state.loc1 !== 'X' && this.state.loc1 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin();
         this.setState({turn: 'X', loc1: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin();
         this.setState({turn: 'O', loc1: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -161,14 +181,15 @@ class Tictactoe extends Component {
   handleClick2(e) {
     if(this.state.loc2 !== 'X' && this.state.loc2 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin();
         this.setState({turn: 'X', loc2: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin();
         this.setState({turn: 'O', loc2: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -176,14 +197,15 @@ class Tictactoe extends Component {
   handleClick3(e) {
     if(this.state.loc3 !== 'X' && this.state.loc3 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin();
         this.setState({turn: 'X', loc3: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin();
         this.setState({turn: 'O', loc3: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -191,14 +213,15 @@ class Tictactoe extends Component {
   handleClick4(e) {
     if(this.state.loc4 !== 'X' && this.state.loc4 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
         this.setState({turn: 'X', loc4: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin('X', null);
         this.setState({turn: 'O', loc4: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -206,14 +229,15 @@ class Tictactoe extends Component {
   handleClick5(e) {
     if(this.state.loc5 !== 'X' && this.state.loc5 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
         this.setState({turn: 'X', loc5: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin('X', null);
         this.setState({turn: 'O', loc5: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -221,14 +245,15 @@ class Tictactoe extends Component {
   handleClick6(e) {
     if(this.state.loc6 !== 'X' && this.state.loc6 !== 'O' && this.win === false) {
       if(this.state.turn === 'start' || this.state.turn === 'O') {
-        this.willWin('X', null);
         this.setState({turn: 'X', loc6: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin('X', null);
         this.setState({turn: 'O', loc6: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -236,14 +261,15 @@ class Tictactoe extends Component {
   handleClick7(e) {
     if(this.state.loc7 !== 'X' && this.state.loc7 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
-        this.willWin('X', null);
         this.setState({turn: 'X', loc7: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin('X', null);
         this.setState({turn: 'O', loc7: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
@@ -251,14 +277,15 @@ class Tictactoe extends Component {
   handleClick8(e) {
     if(this.state.loc8 !== 'X' && this.state.loc8 !== 'O' && this.win === false) {
       if(this.state.turn === ' ' || this.state.turn === 'O') {
-        this.willWin('X', null);
         this.setState({turn: 'X', loc8: 'X'});
         setTimeout(() => {this.checkForWin('X')},0);
       } else {
-        this.willWin('X', null);
         this.setState({turn: 'O', loc8: 'O'});
         setTimeout(() => {this.checkForWin('O')},0);
       }
+    }else {
+      console.log("Game over");
+      this.win = true;
     }
     e.preventDefault();
   }
