@@ -71,27 +71,27 @@ class Tictactoe extends Component {
   }
 
   playFork() {
-
+    return false;
   }
 
   detectFork() {
-    
+    return false;
   }
 
   playCenter() {
-
+    return false;
   }
 
   playOppCorner() {
-
+    return false;
   }
 
   playEmptyCorner() {
-
+    return false;
   }
 
   playEmptySide() {
-
+    return false;
   }
 
   checkForWin(move) {
