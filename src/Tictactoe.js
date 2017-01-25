@@ -34,10 +34,10 @@ class Tictactoe extends Component {
   }
 
   ai() {
-    let move = this.willWin();
+    let move = this.winOrBlock();
     // if there is a "winning" move, take it.
-    // if the winning move is the computers, the computer wins (human error);
-    // otherwise the "win" was the human's, and thus block it.
+    // if the winning move is the computer's, the computer wins (human error);
+    // otherwise the "win" was the player's, and thus blocks it.
     if(move) {
       let location = 'loc' + move;
       this.setState({turn: this.state.computer, [location]: this.state.computer});
@@ -47,7 +47,7 @@ class Tictactoe extends Component {
       // location and move there.
       let foundOne = false;
       console.log("Win state: " + this.win);
-      while(this.available() && !foundOne && !this.win){
+      while(this.available() && !foundOne){
         let randomMoveLocation = Math.floor(Math.random() * 9);
         let randomMove = 'loc' + randomMoveLocation.toString();
         if(this.state[randomMove].match(/\d/)) {
@@ -66,7 +66,32 @@ class Tictactoe extends Component {
         return true;
       }
     }
+    this.setState({gameOver: true});
     return false;
+  }
+
+  playFork() {
+
+  }
+
+  detectFork() {
+    
+  }
+
+  playCenter() {
+
+  }
+
+  playOppCorner() {
+
+  }
+
+  playEmptyCorner() {
+
+  }
+
+  playEmptySide() {
+
   }
 
   checkForWin(move) {
@@ -83,34 +108,42 @@ class Tictactoe extends Component {
     switch(triple) {
       case row0:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case row1:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case row2:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case col0:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case col1:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case col2:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case diag0:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       case diag1:
         console.log(`${move} wins`);
+        this.setState({gameOver: true});
         this.win = true;
         return true;
       default:
@@ -120,7 +153,8 @@ class Tictactoe extends Component {
     return false;
   }
 
-  willWin() {
+  // ai: either win, or block opponents win
+  winOrBlock() {
     let row0 = this.state.loc0 + this.state.loc1 + this.state.loc2;
     let row1 = this.state.loc3 + this.state.loc4 + this.state.loc5;
     let row2 = this.state.loc6 + this.state.loc7 + this.state.loc8;
