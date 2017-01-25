@@ -78,10 +78,12 @@ class Tictactoe extends Component {
     return false;
   }
 
+  // place move at center location
   playCenter() {
     return false;
   }
 
+  // place move at corner opposite from player corner
   playOppCorner() {
     return false;
   }
