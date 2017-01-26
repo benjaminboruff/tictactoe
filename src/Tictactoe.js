@@ -87,11 +87,13 @@ class Tictactoe extends Component {
   playOppCorner() {
     return false;
   }
-
+  
+  // place move in empty corner
   playEmptyCorner() {
     return false;
   }
 
+  // place move in an empty side
   playEmptySide() {
     return false;
   }
